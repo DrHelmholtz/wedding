@@ -1,4 +1,8 @@
+'use strict';
+
 $(document).ready(function () {
+
+    var invitationCode = ['510e07be2d27ba618dc0a1461269736e'];
 
     /***************** Waypoints ******************/
 
@@ -38,7 +42,7 @@ $(document).ready(function () {
         offset: '75%'
     });
     $('.wp8').waypoint(function () {
-        $('.wp8').addClass('animated fadeInLeft');
+        $('.wp8').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
@@ -47,6 +51,30 @@ $(document).ready(function () {
     }, {
         offset: '75%'
     });
+    $('.wp10').waypoint(function () {
+        $('.wp10').addClass('animated fadeInRight');
+    }, {
+        offset: '75%'
+    });
+
+    $('.wp10').waypoint(function () {
+        $(this).addClass('animated fadeInRight');
+    }, {
+        offset: '75%'
+    });
+
+    $('.balos').waypoint(function () {
+        $('.balos').addClass('animated fadeInLeft');
+    }, {
+        offset: '75%'
+    });
+
+    $('.jobbos').waypoint(function () {
+        $('.jobbos').addClass('animated fadeInRight');
+    }, {
+        offset: '75%'
+    });
+
 
     /***************** Initiate Flexslider ******************/
     $('.flexslider').flexslider({
@@ -68,204 +96,159 @@ $(document).ready(function () {
     /***************** Tooltips ******************/
     $('[data-toggle="tooltip"]').tooltip();
 
-    /***************** Nav Transformicon ******************/
-
-    /* When user clicks the Icon */
-    $('.nav-toggle').click(function () {
-        $(this).toggleClass('active');
-        $('.header-nav').toggleClass('open');
-        event.preventDefault();
-    });
-    /* When user clicks a link */
-    $('.header-nav li a').click(function () {
-        $('.nav-toggle').toggleClass('active');
-        $('.header-nav').toggleClass('open');
-
-    });
-
     /***************** Header BG Scroll ******************/
 
     $(function () {
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();
 
-            if (scroll >= 20) {
-                $('section.navigation').addClass('fixed');
-                $('header').css({
+            if (scroll >= 80) {
+                $('nav').addClass('fixed');
+                $('nav').css({
                     "border-bottom": "none",
-                    "padding": "35px 0"
+                    "padding": "10px 0"
                 });
-                $('header .member-actions').css({
-                    "top": "26px",
-                });
-                $('header .navicon').css({
-                    "top": "34px",
-                });
+                // $('header .member-actions').css({
+                //     "top": "26px",
+                // });
+                // $('header .navicon').css({
+                //     "top": "34px",
+                // });
             } else {
-                $('section.navigation').removeClass('fixed');
-                $('header').css({
-                    "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
-                    "padding": "50px 0"
-                });
-                $('header .member-actions').css({
-                    "top": "41px",
-                });
-                $('header .navicon').css({
-                    "top": "48px",
-                });
+                $('nav').removeClass('fixed');
+
+                // $('header .member-actions').css({
+                //     "top": "41px",
+                // });
+                // $('header .navicon').css({
+                //     "top": "48px",
+                // });
             }
         });
     });
-    /***************** Smooth Scrolling ******************/
 
-    $(function () {
-
-        $('a[href*=#]:not([href=#])').click(function () {
-            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 90
-                    }, 2000);
-                    return false;
-                }
-            }
+    var cards = [ $('#map-car-content'),  $('#map-bus-content'), $('#map-content')];
+    function hideAllcard() {
+        cards.map(function(card){
+            card.removeClass('show');
         });
-
-    });
-
-    /********************** Social Share buttons ***********************/
-    var share_bar = document.getElementsByClassName('share-bar');
-    var po = document.createElement('script');
-    po.type = 'text/javascript';
-    po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(po, s);
-
-    for (var i = 0; i < share_bar.length; i++) {
-        var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
-            'style="width:105px; height:21px;">' +
-            '</iframe>' +
-
-            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
-
-            '<div class="g-plusone" data-size="medium"></div>';
-
-        // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
-
-        share_bar[i].innerHTML = html;
-        share_bar[i].style.display = 'inline-block';
     }
-
-    /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
-
-
-    /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
-    });
-    $('#btn-show-content').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+    
+    $('.hide-map-card-button').click(function () {
+        hideAllcard();
+        $('#btn-show-info').remove('toggle-map-content');
     });
 
-    /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
-        options: {
-            class: '',
-            // You can pass an ID. If you don't, one will be generated for you
-            id: ''
-        },
-        data: {
-            // Event title
-            title: "Ram and Antara's Wedding",
-
-            // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
-
-            // Event duration (IN MINUTES)
-            // duration: 120,
-
-            // You can also choose to set an end time
-            // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
-
-            // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
-
-            // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
-        }
-    });
-
-    $('#add-to-cal').html(myCalendar);
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
+    $('#rsvp-form, #room-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        $('.alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
+        console.log(MD5($('#invite_code').val()));
+        if (!invitationCode.includes(MD5($(e.target).find('[name=invite_code]').val()))) {
+            $('.alert-wrapper').html(alert_markup('danger', '<strong>Bocsi!</strong> Nem jó a meghívó kód.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbxFiixK9oQ6lAsJmjIyfdrvTIHmPw821u192TXuNB-TngqgXmIP/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
+                        $('.alert-wrapper').html(alert_markup('danger', data.message));
                     } else {
-                        $('#alert-wrapper').html('');
+                        $('.alert-wrapper').html('');
                         $('#rsvp-modal').modal('show');
                     }
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('.alert-wrapper').html(alert_markup('danger', '<strong>Ajaja!</strong> Valami olyan történt, amire senki sem számított, kérlek próbáld meg egy kicsit később '));
                 });
         }
+    });
+
+    /* 
+    *   Invitation code display friends or family form dpends on code
+    */
+    $('#invite_code').on('input', function(ev){
+        if(MD5(ev.target.value) === invitationCode[0]) {
+            // family
+            $('#family-form').show();
+        }
+    });
+
+    $('#has_kid_yes').on('input', function(ev) {
+       $('#kids').removeClass('d-none');
+    });
+
+    $('#has_kid_no').on('input', function(ev) {
+       $('#kids').addClass('d-none'); 
+    });
+
+    $('#partner_yes').on('input', function(ev) {
+        $('#partner_name_block').removeClass('d-none');
+     });
+ 
+     $('#partner_no').on('input', function(ev) {
+        $('#partner_name_block').addClass('d-none'); 
+     });
+ 
+
+    $('#room_has_kid_yes').on('input', function(ev) {
+        $('#room_kids').removeClass('d-none');
+     });
+ 
+     $('#room_has_kid_no').on('input', function(ev) {
+        $('#room_kids').addClass('d-none'); 
+     });
+
+    /**
+     * 
+     * room
+     */
+     $('#invite_code_for_room').on('input', function(ev){
+        if(MD5(ev.target.value) === invitationCode[0]) {
+            // family
+            $('#room-form-content').removeClass('d-none');
+        } else if (MD5(ev.target.value) === invitationCode[1]) {
+            $('#room-form-content').removeClass('d-none');
+            $('#room-plus-one-text').html('+1 fő');
+        } 
     });
 
 });
 
 /********************** Extras **********************/
+var carFromBpLayer, carKecskemetLayer, busStopMarker, map;
 
-// Google map
-function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
-    });
+function initroutes(){
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
+    map = new google.maps.Map(
+        document.getElementById("map-canvas"), {
+          center: new google.maps.LatLng(46.205553, 20.1116823),
+          zoom: 17,
+          mapTypeId: 'satellite',
+          styles: [
+            {
+              featureType: "poi",
+              stylers: [
+               { visibility: "off" }
+              ]   
+             }
+         ]
+        });
+
+    new google.maps.Marker({
+        position: {lat:46.20568997415379, lng: 20.11420801869239},
+        title: "Esküvő",
+        map: map,
     });
 }
 
-function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
-    });
+// Google map
+function initMap() {
+    initroutes();
 }
 
 // alert_markup
