@@ -226,7 +226,7 @@ function initroutes(){
 
     map = new google.maps.Map(
         document.getElementById("map-canvas"), {
-          center: new google.maps.LatLng(46.205553, 20.1116823),
+          center: new google.maps.LatLng(46.7502365, 20.6111354),
           zoom: 17,
           mapTypeId: 'satellite',
           styles: [
@@ -240,7 +240,7 @@ function initroutes(){
         });
 
     new google.maps.Marker({
-        position: {lat:46.20568997415379, lng: 20.11420801869239},
+        position: {lat:46.75023651123047, lng: 19.611135482788086},
         title: "Esküvő",
         map: map,
     });
