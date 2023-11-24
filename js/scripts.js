@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-    var invitationCode = ['510e07be2d27ba618dc0a1461269736e'];
+    var invitationCode = ['b0e53b10c1f55ede516b240036b88f40'];
 
     /***************** Waypoints ******************/
 
@@ -172,6 +172,7 @@ $(document).ready(function () {
     *   Invitation code display friends or family form dpends on code
     */
     $('#invite_code').on('input', function(ev){
+        console.log(ev.target.value)
         if(MD5(ev.target.value) === invitationCode[0]) {
             // family
             $('#family-form').show();
@@ -202,6 +203,14 @@ $(document).ready(function () {
      $('#room_has_kid_no').on('input', function(ev) {
         $('#room_kids').addClass('d-none'); 
      });
+     
+     $('#room_yes').on('input', function(ev) {
+        $('#room_number_block').removeClass('d-none');
+     });
+ 
+     $('#room_no').on('input', function(ev) {
+        $('#room_number_block').addClass('d-none'); 
+     });
 
     /**
      * 
@@ -220,7 +229,6 @@ $(document).ready(function () {
 });
 
 /********************** Extras **********************/
-var carFromBpLayer, carKecskemetLayer, busStopMarker, map;
 
 function initroutes(){
 

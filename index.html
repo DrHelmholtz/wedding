@@ -55,7 +55,12 @@
                             <li class="nav-item">
                                 <a  href="#ajandek">Ajándék</a>
                             </li>
-                            <li class="nav-item"><a href="#helyszin" class="login">Helyszín</a></li>                            
+                            <li class="nav-item">
+                                <a href="#helyszin">Helyszín</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#szallas">Szállás</a>
+                            </li>                             
                         </ul>
                         <ul class="navbar-nav member-actions">
                             <li class="nav-item"><a href="#rsvp" class="btn-white btn-small">Ott leszek!</a></li>
@@ -253,6 +258,19 @@
         </div>
         </div>
     </section>
+    <section class="szallas text-center section-padding" id="szallas">
+        <div class="container">
+            <div class="col-md-12 parallax-card text-center">
+                <h3>Szállás</h3>
+                <p class="">Szállás lehetőség a szomszédos Aero hotelban lesz. Ez önköltséges, 9900 Ft/fő/éj, szobánként két férőhely. Szobánként kettő 
+                    pótágy igényelhető 6000Ft/fő áron. Az ár reggelit is tartalmaz.</p>
+                    <p>A szálloda előtt parkolási lehetőség van, és arra kérnénk a megszálló vendégeket, hogy lehetőleg ott tegyék le a kocsit.</p>
+                    <p>Ezen felül taxi szolgálat lesz, ők tudják biztosítani a könnyed eljutás a környékre az este végeztével.</p>
+
+            </div>
+        </div>
+
+    </section>
         <!--
     ## RSVP ##
     -->
@@ -318,7 +336,7 @@
                     <h5>Július 17-ig várjuk a visszajelzéseket!</h5>
                     <form id="rsvp-form" class="rsvp-form gform"
                         action=""
-                        method="POST">
+                        method="POST" novalidate>
                         <div id="invite-code-container">
                             <div class="row">
                                 <div class="col-md-6 offset-md-3 col-sm-12">
@@ -361,7 +379,7 @@
                                             <i class="fa fa-user-friends"></i><p id="plus-one-text" class="">házastárs / élettárs / partner</p>
                                         </div>
                                         <div class="col-lg-3 col-2 bigtoggle">
-                                            <input type="radio" class="btn-check" name="partner" id="partner_yes" autocomplete="off" value="true" required>
+                                            <input type="radio" class="btn-check" id="partner_yes" name="partner" autocomplete="off" value="true" required>
                                             <label class="btn btn-toggle  btn-outline-primary" for="partner_yes">Igen</label>
                                         </div>
                                         <div  class="col-lg-3 col-2 bigtoggle">
@@ -378,7 +396,7 @@
                                             <i class="fa fa-child"></i><p class="">gyermek</p>
                                         </div>
                                         <div class="col-lg-3 col-2 bigtoggle">
-                                            <input type="radio" class="btn-check" name="has_kid" id="has_kid_yes" autocomplete="off" value="true" required>
+                                            <input type="radio" class="btn-check" id="has_kid_yes" name="has_kid" autocomplete="off" value="true" required>
                                             <label class="btn btn-toggle  btn-outline-primary" for="has_kid_yes">Igen</label>
                                         </div>
                                         <div  class="col-lg-3 col-2 bigtoggle">
@@ -389,7 +407,6 @@
                                 </div>
                             </div>
                             <div class="row d-none" id="kids" >
-                                    <h5>nincsen biztosítva gyerek sarok</h5>
                                     <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
                                             <input type="number" name="under_6" class="pure" min="0"
@@ -413,6 +430,27 @@
                                                                             placeholder="12 év feletti"
                                                                             >
                                         </div>
+                                </div>
+                            </div>
+                            <div class="form-check-inline form-input-group ">
+                                <div class="col-lg-6 col-8">
+                                    <i class="fa fa-hotel"></i><p id="room-text" class="">Szállás igény</p>
+                                </div>
+                                <div class="col-lg-3 col-2 bigtoggle">
+                                    <input type="radio" class="btn-check" id="room_yes" name="room" autocomplete="off" value="true" required>
+                                    <label class="btn btn-toggle  btn-outline-primary" for="room_yes">Igen</label>
+                                </div>
+                                <div  class="col-lg-3 col-2 bigtoggle">
+                                    <input type="radio" class="btn-check" id="room_no" name="room" autocomplete="off" value="false">
+                                    <label class="btn btn-toggle  btn-outline-primary" for="room_no">Nem</label>
+                                </div>
+                            </div>
+                            <div class="row d-none" id="room_number_block" >
+                                <h5>A szállásról bővebben a <a style="text-decoration: underline;" href="#szallas">Szállás</a> menüpont alatt találsz infót.</h5>
+                                <div class="col-md-3 col-sm-3 col-6">
+                                    <div class="form-input-group">
+                                        <input type="number" name="room_number" class="pure" placeholder="Hány fő?">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row  mb-2">
@@ -466,8 +504,6 @@
 <script src="dist/js/jquery.waypoints.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.js"></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYExgu4DLV7sjPE6ZB_7yPbD4_XNEHRYQ&callback=initMap"></script> 
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYExgu4DLV7sjPE6ZB_7yPbD4_XNEHRYQ&callback=initMap"></script> 
 </body>
 </html>
