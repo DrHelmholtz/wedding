@@ -142,6 +142,10 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
+    $(document).on("keydown", ":input:not(textarea)", function(event) {
+        return event.key != "Enter";
+    });
+    
     $('#rsvp-form, #room-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();

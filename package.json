@@ -19,19 +19,20 @@
   "license": "GPL-3.0",
   "homepage": "https://github.com/rampatra/wedding-website",
   "devDependencies": {
-    "browser-sync": "^2.27.7",
+    "browser-sync": "^2.23.7",
     "gulp": "^4.0.2",
     "gulp-livereload": "^4.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
+    "minimist": "^1.2.8",
     "sass": "^1.48.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "animate.css": "^3.7.2",
     "browserify": "^17.0.0",
-    "gulp-watch": "^5.0.1",
+    "gulp-watch": "^4.0.1",
     "jquery": "^3.6.0",
     "node-sass": "^8.0.0",
     "waypoints": "^4.0.1"
