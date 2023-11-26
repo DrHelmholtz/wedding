@@ -891,9 +891,9 @@ Google map
 /* ==========================================================================
 RSVP form
 ========================================================================== */
-.rsvp {
+.rsvp, .music  {
   padding-bottom: 140px;
-  .rsvp-form, .szallas-form {
+  .rsvp-form, .szallas-form, .music-form {
     padding-top: 40px;
     .rsvp-btn {
       padding: 15px 0;
@@ -922,7 +922,7 @@ RSVP form
         font-size: 14px;
       }
       
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key, .fa-user-friends, .fa-baby, .fa-child, .fa-phone, .fa-lock, .fa-hotel {
+      i.fa-user, i.fa-users, i.fa-envelope, .fa-key, .fa-user-friends, .fa-baby, .fa-child, .fa-phone, .fa-lock, .fa-hotel, .fa-music {
         font-size: 14px;
         position: absolute;
         top: 50%;

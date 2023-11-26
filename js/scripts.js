@@ -138,7 +138,29 @@ $(document).ready(function () {
         hideAllcard();
         $('#btn-show-info').remove('toggle-map-content');
     });
-
+    /********************** MUSIC **********************/
+    $('#music-rec').click(function(){
+        $('#music-container').removeClass('d-none');
+    })
+    $('#music-form').on('submit', function (e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+        $('.alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
+        $.post('https://script.google.com/macros/s/AKfycbzP4H0jR6cSHnhQStHzXj0sQV09ZQWe6tkQqWgB5xU2lAy_MLriaO3D2YKXtqcvu2BW_g/exec', data)
+            .done(function (data) {
+                console.log(data);
+                if (data.result === "error") {
+                    $('.alert-wrapper').html(alert_markup('danger', data.message));
+                } else {
+                    $('.alert-wrapper').html('');
+                    $('#music-modal').modal('show');
+                }
+            })
+            .fail(function (data) {
+                console.log(data);
+                $('.alert-wrapper').html(alert_markup('danger', '<strong>Ajaja!</strong> Valami olyan történt, amire senki sem számított, kérlek próbáld meg egy kicsit később '));
+            });
+    });
 
 
     /********************** RSVP **********************/

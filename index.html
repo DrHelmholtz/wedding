@@ -152,26 +152,63 @@
             </div>
         </div>
     </section>       
-  <section id="zene" class="section-padding music-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>Szeretnéd, hogy a kedvenc zenéd szóljon a lakodalomban?</h3>
-                <h2>Mi is!</h2>
-                <p>Fontos számunkra, hogy mindenki jól érezze magát, meg aztán ki ne szeretné, hogy kedvenceire táncolhasson?
-                <br>Ezért szeretnénk a segítségeteket kérni! Ha ismered a világ legjobb dalait, legyen táncos, latin, disco, pop, régi, új vagy bármi ami necces ;) Küld el nekünk!</p>
-                <p>A Zenét DJ fogja szolgáltatni!</p>
-                <div class="col-md-4 offset-md-4 text-center">
-                    <a href="https://youtube-list-maker.herokuapp.com/" target="blank" class="btn btn-accent btn-small">
-                        <i class="fa fa-music"></i>&nbsp;&nbsp; Zene ajánlása
-                    </a>
+
+    <section id="music" class="music section-padding music-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 text-center">
+                    <h3>Szeretnéd, hogy a kedvenc zenéd szóljon a lakodalomban?</h3>
+                    <h2>Mi is!</h2>
+                    <p>Fontos számunkra, hogy mindenki jól érezze magát, meg aztán ki ne szeretné, hogy kedvenceire táncolhasson?
+                    <br>Ezért szeretnénk a segítségeteket kérni! Ha ismered a világ legjobb dalait, legyen táncos, latin, disco, pop, régi, új vagy bármi ami necces ;) Küld el nekünk!</p>
+                    <p>A Zenét DJ fogja szolgáltatni!</p>
+                    <div class="col-lg-12 col-12 mb-4">
+                        <button type="button" class="btn btn-accent btn-small" id="music-rec">Zene ajánlása</button>
+                        <div id="music-container" class="d-none">
+                            <div class="" >
+                                <form id="music-form" class="music-form gform"
+                                action=""
+                                method="POST" novalidate>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-input-group">
+                                        <i class="fa fa-music"></i><input name="name" class=""
+                                            placeholder="Zene cím"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-input-group">
+                                        <i class="fa fa-music"></i><input name="link" class=""
+                                            placeholder="Link"
+                                            required>
+                                    </div>
+                                </div>
+                                <button class="btn-fill rsvp-btn">
+                                    Elküldés!
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div id="music-modal" class="modal fade" tabindex="-1" aria-hidden="true" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Köszönjük az ajánlást!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-accent btn-small" data-bs-dismiss="modal">Bezárás</button>
 
-    
-</section>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
     </section>
     <section class="location-card" id="helyszin">
         <div class="card-layout">
