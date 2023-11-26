@@ -144,9 +144,11 @@ $(document).ready(function () {
     })
     $('#music-form').on('submit', function (e) {
         e.preventDefault();
-        var data = $(this).serialize();
+        var datas = $(this).serialize();
+        console.log(datas)
         $('.alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
-        $.post('https://script.google.com/macros/s/AKfycbzP4H0jR6cSHnhQStHzXj0sQV09ZQWe6tkQqWgB5xU2lAy_MLriaO3D2YKXtqcvu2BW_g/exec', data)
+        
+        $.post('https://script.google.com/macros/s/AKfycbzP4H0jR6cSHnhQStHzXj0sQV09ZQWe6tkQqWgB5xU2lAy_MLriaO3D2YKXtqcvu2BW_g/exec', datas)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
@@ -173,7 +175,6 @@ $(document).ready(function () {
         var data = $(this).serialize();
 
         $('.alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
-        console.log(MD5($('#invite_code').val()));
         if (!invitationCode.includes(MD5($(e.target).find('[name=invite_code]').val()))) {
             $('.alert-wrapper').html(alert_markup('danger', '<strong>Bocsi!</strong> Nem jó a meghívó kód.'));
         } else {
