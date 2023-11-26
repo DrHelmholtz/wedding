@@ -263,10 +263,10 @@
             <div class="col-md-12 parallax-card text-center">
                 <h3>Szállás</h3>
                 <p class="">Szállás lehetőség a szomszédos Aero hotelban lesz. Ez önköltséges, 9900 Ft/fő/éj, szobánként két férőhely. Szobánként kettő 
-                    pótágy igényelhető 6000Ft/fő áron. Az ár reggelit is tartalmaz.</p>
-                    <p>A szálloda előtt parkolási lehetőség van, és arra kérnénk a megszálló vendégeket, hogy lehetőleg ott tegyék le a kocsit.</p>
-                    <p>Ezen felül taxi szolgálat lesz, ők tudják biztosítani a könnyed eljutás a környékre az este végeztével.</p>
-
+                    pótágy igényelhető 6000Ft/fő áron. Kis állat pedig 3000Ft/egység. Az ár tartalmazza a svédasztalos reggelit, valamint az uszoda és a szauna használatát.</p>
+                    <p>A szálloda előtt parkolási lehetőség van, és arra kérnénk az ott megszálló vendégeket, hogy lehetőleg ott tegyék le a kocsit, 
+                        valamint checkoljanak is be.</p>
+                    <p>Ezen felül taxi szolgálat lesz, ők tudják biztosítani a könnyed eljutást a környékre az este végeztével. Vagy közben... Ti tudjátok!</p>
             </div>
         </div>
 
@@ -333,7 +333,8 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <h3>visszajelzés</h3>
-                    <h5>Július 17-ig várjuk a visszajelzéseket!</h5>
+                    <h5>Akinek nem kell szállás, azok visszajelzéseit április 30-ig várjuk, akik rajtunk keresztül szeretnének szállás,
+                        azok visszajelzését, december 3-ig várjuk.</h5>
                     <form id="rsvp-form" class="rsvp-form gform"
                         action=""
                         method="POST" novalidate>
@@ -409,26 +410,20 @@
                             <div class="row d-none" id="kids" >
                                     <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
-                                            <input type="number" name="under_6" class="pure" min="0"
-                                                                            max="3"
-                                                                            placeholder="6 év alatt"
-                                                                            >
+                                            <input type="number" name="under_4" class="pure" min="0"
+                                                                            placeholder="4 év alatt">
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
-                                        <input type="number" name="under_12" class="pure" min="0"
-                                                                            max="3"
-                                                                            placeholder="12 év alatt"
-                                                                            >
+                                        <input type="number" name="under_16" class="pure" min="0"
+                                                                            placeholder="16 év alatt">
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
-                                            <input type="number" name="over_12" class="pure" min="0"
-                                                                            max="3"
-                                                                            placeholder="12 év feletti"
-                                                                            >
+                                            <input type="number" name="over_16" class="pure" min="0"
+                                                                            placeholder="16 év feletti">
                                         </div>
                                 </div>
                             </div>
@@ -449,7 +444,17 @@
                                 <h5>A szállásról bővebben a <a style="text-decoration: underline;" href="#szallas">Szállás</a> menüpont alatt találsz infót.</h5>
                                 <div class="col-md-3 col-sm-3 col-6">
                                     <div class="form-input-group">
-                                        <input type="number" name="room_number" class="pure" placeholder="Hány fő?">
+                                        <input type="number" name="room_number" class="pure" placeholder="Hány szoba?">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-6">
+                                    <div class="form-input-group">
+                                        <input type="number" name="bed_number" class="pure" placeholder="Hány ágy?">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-6">
+                                    <div class="form-input-group">
+                                        <input type="number" name="extra_bed_number" class="pure" placeholder="Hány pótágy?">
                                     </div>
                                 </div>
                             </div>
