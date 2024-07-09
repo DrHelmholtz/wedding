@@ -163,38 +163,7 @@ $(document).ready(function () {
                 $('.alert-wrapper').html(alert_markup('danger', '<strong>Ajaja!</strong> Valami olyan történt, amire senki sem számított, kérlek próbáld meg egy kicsit később '));
             });
     });
-
-
-    /********************** RSVP **********************/
-    $(document).on("keydown", ":input:not(textarea)", function(event) {
-        return event.key != "Enter";
-    });
     
-    $('#rsvp-form, #room-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
-
-        $('.alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
-        if (!invitationCode.includes(MD5($(e.target).find('[name=invite_code]').val()))) {
-            $('.alert-wrapper').html(alert_markup('danger', '<strong>Bocsi!</strong> Nem jó a meghívó kód.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbzABLZe5WI3oZFN5xNH1cuig3M16YLqYsrRdnZLgWjEi2h1irM-zFumoaTrHKLtWTvF/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('.alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('.alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('.alert-wrapper').html(alert_markup('danger', '<strong>Ajaja!</strong> Valami olyan történt, amire senki sem számított, kérlek próbáld meg egy kicsit később '));
-                });
-        }
-    });
-
     /* 
     *   Invitation code display friends or family form dpends on code
     */
